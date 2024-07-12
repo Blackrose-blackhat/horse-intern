@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Horse 1",
+        "image": "/assets/videos/horse1.mp4",
+        "description": "This is Horse 1.",
+        "breed": "Breed 1"
+    },
+    {
+        "id": 2,
+        "name": "Horse 2",
+        "image": "/assets/videos/horse2.mp4",
+
+        "description": "This is Horse 2.",
+        "breed": "Breed 2"
+    },
+    {
+        "id": 3,
+        "name": "Horse 3",
+        "image": "/assets/videos/horse3.mp4",
+
+        "description": "This is Horse 3.",
+        "breed": "Breed 3"
+    }
+]
