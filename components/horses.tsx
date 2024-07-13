@@ -4,6 +4,7 @@ import { CardBody, CardContainer as BaseCardContainer, CardItem } from "@/compon
 import Image from 'next/image';
 import horses from "@/lib/horses.json"
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const CardContainer = motion(BaseCardContainer)
 
@@ -50,16 +51,17 @@ const Horses = () => {
                   onMouseLeave={e => e.target.pause()}
                 />
               </CardItem>
-              <div className="flex justify-between items-center mt-20">
+              <Link href='/booking' className="flex justify-between items-center mt-20">
                 <CardItem
                   translateZ={20}
                   translateX={-40}
                   as="button"
                   className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  
                 >
                   Try now →
                 </CardItem>
-              </div>
+              </Link>
             </CardBody>
           </CardContainer>
         )

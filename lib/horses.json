@@ -1,25 +1,23 @@
 [
     {
         "id": 1,
-        "name": "Horse 1",
+        "name": "Midnight Thunder",
         "image": "/assets/videos/horse1.mp4",
-        "description": "This is Horse 1.",
-        "breed": "Breed 1"
+        "description": "Midnight Thunder is a majestic horse known for its striking black coat and graceful movements. This horse is not only beautiful but also has a gentle and friendly temperament, making it perfect for riders of all experience levels.",
+        "breed": "Arabian"
     },
     {
         "id": 2,
-        "name": "Horse 2",
+        "name": "Silver Blaze",
         "image": "/assets/videos/horse2.mp4",
-
-        "description": "This is Horse 2.",
-        "breed": "Breed 2"
+        "description": "Silver Blaze is a stunning horse with a shimmering silver coat that catches the light beautifully. This horse is renowned for its speed and agility, making it a favorite among riders who enjoy an exhilarating ride.",
+        "breed": "Thoroughbred"
     },
     {
         "id": 3,
-        "name": "Horse 3",
+        "name": "Stardust Whisper",
         "image": "/assets/videos/horse3.mp4",
-
-        "description": "This is Horse 3.",
-        "breed": "Breed 3"
+        "description": "Stardust Whisper is a charming horse with a coat that glistens like the night sky. Known for its calm demeanor and smooth gait, this horse offers a serene and enjoyable riding experience, perfect for leisurely rides.",
+        "breed": "Morgan"
     }
 ]
