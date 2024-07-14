@@ -10,7 +10,7 @@ const CardContainer = motion(BaseCardContainer)
 
 const Horses = () => {
   return (
-    <div id='horses' className='flex flex-wrap gap-5 px-3 justify-center items-center'>
+    <div id='horses' className='flex flex-wrap gap-20 px-3 justify-center w-full items-center'>
       {horses.map(horse => {
         return (
           <CardContainer 

@@ -41,7 +41,7 @@ import animationData from "@/public/Animation - 1720889874377.json"; // Update t
 const FormSchema = z.object({
   username: z.string().nonempty({ message: "Enter your username" }),
   horse: z.string().nonempty({ message: "Select a horse" }),
-  dob: z.date({ required_error: "A date of birth is required." }),
+  dob: z.date({ required_error: "A date is required." }),
   phoneNumber: z.string().refine((val) => validator.isMobilePhone(val), {
     message: "A valid phone number is required.",
   }),
@@ -60,16 +60,15 @@ export function BookingForm() {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-  
+
     // Disable Sundays
     if (date.getDay() === 0) {
       return false;
     }
-  
+
     // Disable dates before tomorrow
     return date.getTime() >= tomorrow.getTime();
   };
-  
 
   const filterTime = (time) => {
     const selectedDate = new Date(time);
@@ -212,37 +211,61 @@ export function BookingForm() {
               </Button>
             </DialogTrigger>
 
-            <DialogContent >
-              
-                <Lottie options={defaultOptions} height={200} width={200} />
-                <DialogHeader>
-                  <DialogTitle >
-                    Your Freedom is booked
-                  </DialogTitle>
-                  <DialogDescription >
-                    Your booking for{" "}
-                    <span className="font-semibold">{formData?.horse}</span> on{" "}
-                    <span className="font-semibold">
-                      {new Date(formData?.dob).toDateString()}
-                    </span>{" "}
-                    has been confirmed. Our team will reach out to you at{" "}
-                    <span className="font-semibold">
-                      {formData?.phoneNumber}
-                    </span>{" "}
-                    for further details.
-                  </DialogDescription>
-                  <p className="mt-4">{" "} Thank you<span>{formData?.username}</span>{""} for booking with us!</p>
-                  <p className="mt-4">
-                    A calendar invite has been sent to your email.
-                  </p>
-                </DialogHeader>
-                <Button
-                  onClick={handleClose}
-                  className="mt-4 bg-blue-500 text-white"
-                >
-                  Close
-                </Button>
-              
+            <DialogContent>
+              <Lottie options={defaultOptions} height={200} width={200} />
+              <DialogHeader>
+                <DialogTitle>Your Freedom is booked</DialogTitle>
+                <DialogDescription>
+                  <ul>
+                   
+                    <li>
+                      Our team will reach out to you at{" "}
+                      <span className="font-semibold">
+                        {formData?.phoneNumber}
+                      </span>{" "}
+                      for further details.
+                    </li>
+                    <li>
+                      Thank you <span>{formData?.username}</span> for booking
+                      with us!
+                    </li>
+                    <li>A calendar invite has been sent to your email.</li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <strong>Name:</strong>{" "}
+                      <span className="font-semibold">
+                        {formData?.username}
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Horse Type:</strong>{" "}
+                      <span className="font-semibold">{formData?.horse}</span>
+                    </li>
+                    <li>
+                      <strong>Date of Booking:</strong>{" "}
+                      <span className="font-semibold">
+                        {new Date(formData?.dob).toDateString()}
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Phone Number:</strong>{" "}
+                      <span className="font-semibold">
+                        {formData?.phoneNumber}
+                      </span>
+
+                    </li>
+                    <br />
+                   
+                  </ul>
+                </DialogDescription>
+              </DialogHeader>
+              <Button
+                onClick={handleClose}
+                className="mt-4 bg-blue-500 text-white"
+              >
+                Close
+              </Button>
             </DialogContent>
           </Dialog>
         </form>
