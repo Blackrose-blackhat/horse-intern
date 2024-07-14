@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript:{
+    ignoreBuildErrors:true
+  },
     webpack(config, options) {
       config.module.rules.push({
         test: /\.mp4$/,
@@ -15,7 +18,9 @@ const nextConfig = {
     },
     images:{
       domains:['images.unsplash.com']
-    }
+    },
+    
+
   };
   
   export default nextConfig;

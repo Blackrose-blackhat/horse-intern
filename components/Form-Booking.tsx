@@ -47,7 +47,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function BookingForm() {
+export default function BookingForm() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState(null);
@@ -56,7 +56,7 @@ export function BookingForm() {
     resolver: zodResolver(FormSchema),
   });
 
-  const filterDate = (date) => {
+  const filterDate = (date: Date) => {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -70,7 +70,7 @@ export function BookingForm() {
     return date.getTime() >= tomorrow.getTime();
   };
 
-  const filterTime = (time) => {
+  const filterTime = (time:string) => {
     const selectedDate = new Date(time);
     const selectedHour = selectedDate.getHours();
 
@@ -81,7 +81,7 @@ export function BookingForm() {
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = (data:any) => {
     setFormData(data);
     handleOpen();
   };
